@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import React, { useState } from "react"
 
 function App() {
+  const [inputValue, setInputValue] = useState("")
+  const [enable, setEnable] = useState(false)
+  const [task, setTask] = useState([])
+
+  const handleInput = (event) => {
+    setInputValue(event.target.value)
+  }
+
+  const handleAddBtn = (event) => {
+    setTask([...task, inputValue])
+    setInputValue("")
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <h1>Todo List</h1>
+      <div className='input__container'>
+        <input
+          className={enable ? "input__enable" : "input__disable"}
+          type='text'
+          value={inputValue}
+          onChange={handleInput}
+          placeholder='Enter your task'
+          onClick={() => setEnable(true)}
+        />
+        <button
+          onClick={() => {
+            handleAddBtn(inputValue)
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          Add
+        </button>
+      </div>
+
+      <h3>{task}</h3>
+    </>
+  )
 }
 
-export default App;
+export default App
