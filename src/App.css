@@ -94,3 +94,12 @@ h3 {
 }
 
 /*single task */
+.single__task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single__task h2 {
+  color: var(--white-tone);
+}
