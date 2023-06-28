@@ -1,4 +1,5 @@
 import "./App.css"
+import Task from "./Task.js"
 import React, { useState } from "react"
 
 function App() {
@@ -10,9 +11,20 @@ function App() {
     setInputValue(event.target.value)
   }
 
-  const handleAddBtn = (event) => {
+  const handleAddBtn = () => {
     setTask([...task, inputValue])
     setInputValue("")
+  }
+
+  const handlePressEnter = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault()
+      handleAddBtn()
+    }
+  }
+
+  const deleteAllTasks = () => {
+    setTask([])
   }
   return (
     <>
@@ -20,11 +32,12 @@ function App() {
       <div className='input__container'>
         <input
           className={enable ? "input__enable" : "input__disable"}
+          placeholder='Enter your task'
           type='text'
           value={inputValue}
           onChange={handleInput}
-          placeholder='Enter your task'
           onClick={() => setEnable(true)}
+          onKeyPress={handlePressEnter}
         />
         <button
           onClick={() => {
@@ -34,8 +47,15 @@ function App() {
           Add
         </button>
       </div>
-
       <h3>{task}</h3>
+      <div className='tasks__container'>
+        {task.map((item, index) => {
+          return <Task name={item} task_id={index} />
+        })}
+      </div>
+      <button id='btn-close' onClick={() => deleteAllTasks()}>
+        Delete all
+      </button>
     </>
   )
 }
