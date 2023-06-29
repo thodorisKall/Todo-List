@@ -17,6 +17,8 @@
 body {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -98,8 +100,36 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--white-tone);
+  padding-top: 0.8rem;
+}
+
+.single__task:first-child {
+  border-top: none;
 }
 
 .single__task h2 {
   color: var(--white-tone);
+}
+
+.task__icons button {
+  background-color: var(--dark-grey);
+  border: none;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--white-tone);
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.task__icons button:hover {
+  background-color: var(--lighter-grey);
+  cursor: pointer;
+}
+
+#btn-delete {
+  margin-right: 1rem;
 }
