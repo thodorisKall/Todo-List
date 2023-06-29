@@ -3,11 +3,15 @@ import { BsFillTrashFill, BsPencil } from "react-icons/bs"
 
 function Task({ name, task_id }) {
   return (
-    <div className='single__task'>
+    <div className='single__task' key={task_id}>
       <h2>{name}</h2>
       <div className='task__icons'>
-        <BsFillTrashFill />
-        <BsPencil />
+        <button id='btn-delete'>
+          <BsFillTrashFill />
+        </button>
+        <button id='btn-note'>
+          <BsPencil />
+        </button>
       </div>
     </div>
   )
