@@ -15,6 +15,7 @@ function App() {
   const handleAddBtn = () => {
     setTask((prevTasks) => [...prevTasks, { id: uuidv4(), name: inputValue }])
     setInputValue("")
+    console.log(task.length)
   }
 
   const handlePressEnter = (event) => {
@@ -53,7 +54,11 @@ function App() {
         </button>
       </div>
 
-      <div className='tasks__container'>
+      <div
+        className={
+          task.length === 0 ? "tasks__container-disabled" : "tasks__container"
+        }
+      >
         {task.map((item, index) => {
           return (
             <Task

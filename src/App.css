@@ -79,6 +79,10 @@ h3 {
   margin-bottom: 4rem;
 }
 
+.tasks__container-disabled {
+  display: none;
+}
+
 #btn-close {
   margin: 0 auto;
   color: var(--danger-red);
