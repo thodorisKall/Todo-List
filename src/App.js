@@ -1,6 +1,7 @@
 import "./App.css"
 import Task from "./Task.js"
 import React, { useState } from "react"
+import { v4 as uuidv4 } from "uuid"
 
 function App() {
   const [inputValue, setInputValue] = useState("")
@@ -12,7 +13,7 @@ function App() {
   }
 
   const handleAddBtn = () => {
-    setTask([...task, inputValue])
+    setTask((prevTasks) => [...prevTasks, { id: uuidv4(), name: inputValue }])
     setInputValue("")
   }
 
@@ -21,6 +22,10 @@ function App() {
       event.preventDefault()
       handleAddBtn()
     }
+  }
+
+  const deleteSingleTask = (taskId) => {
+    setTask(task.filter((task) => task.id !== taskId))
   }
 
   const deleteAllTasks = () => {
@@ -47,10 +52,17 @@ function App() {
           Add
         </button>
       </div>
-      <h3>{task}</h3>
+
       <div className='tasks__container'>
         {task.map((item, index) => {
-          return <Task name={item} task_id={index} />
+          return (
+            <Task
+              key={item.id}
+              name={item.name}
+              task_id={item.id}
+              deleteSingleTask={deleteSingleTask}
+            />
+          )
         })}
       </div>
       <button id='btn-close' onClick={() => deleteAllTasks()}>

@@ -133,3 +133,11 @@ h3 {
 #btn-delete {
   margin-right: 1rem;
 }
+
+.task-id {
+  color: var(--danger-red);
+}
+
+.task-id-disable {
+  display: none;
+}
