@@ -2,6 +2,7 @@ import "./App.css"
 import Task from "./Task.js"
 import React, { useState } from "react"
 import { v4 as uuidv4 } from "uuid"
+import IllustrationTodo from "./assets/illustrationTodo.png"
 
 function App() {
   const [inputValue, setInputValue] = useState("")
@@ -52,6 +53,13 @@ function App() {
         >
           Add
         </button>
+      </div>
+      <div
+        className={
+          task.length === 0 ? "bg__image" : "tasks__container-disabled"
+        }
+      >
+        <img src={IllustrationTodo} alt={IllustrationTodo} />
       </div>
 
       <div

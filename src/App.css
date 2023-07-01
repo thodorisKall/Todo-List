@@ -27,6 +27,7 @@ body {
 }
 
 h1 {
+  margin: 5rem 0 2rem;
   text-align: center;
   color: var(--main-title);
   font-size: 3rem;
@@ -41,6 +42,13 @@ h1 {
 .input__container button {
   height: 4rem;
   border-radius: 10px;
+}
+
+.input__container button {
+  width: 6vw;
+  font-size: 1.5rem;
+  color: var(--dark-grey);
+  font-weight: 700;
 }
 
 .input__disable {
@@ -63,10 +71,6 @@ h1 {
   width: 20vw;
   outline: none;
   box-shadow: none;
-}
-
-h3 {
-  color: var(--cyan-blue);
 }
 
 .tasks__container {
@@ -97,6 +101,17 @@ h3 {
 #btn-close:hover {
   background-color: var(--lighter-grey);
   cursor: pointer;
+}
+
+/* bbg image */
+.bg__image {
+  /* border: 1px solid var(--white-tone); */
+  margin: 0 auto;
+}
+
+.bg__image img {
+  height: auto;
+  width: 80%;
 }
 
 /*single task */
