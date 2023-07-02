@@ -3,11 +3,13 @@ import Task from "./Task.js"
 import React, { useState } from "react"
 import { v4 as uuidv4 } from "uuid"
 import IllustrationTodo from "./assets/illustrationTodo.png"
+import DeleteAll from "./DeleteAll.js"
 
 function App() {
   const [inputValue, setInputValue] = useState("")
   const [enable, setEnable] = useState(false)
   const [task, setTask] = useState([])
+  const [deleteAll, setDeleteAll] = useState(false)
 
   const handleInput = (event) => {
     setInputValue(event.target.value)
@@ -16,7 +18,6 @@ function App() {
   const handleAddBtn = () => {
     setTask((prevTasks) => [...prevTasks, { id: uuidv4(), name: inputValue }])
     setInputValue("")
-    console.log(task.length)
   }
 
   const handlePressEnter = (event) => {
@@ -33,6 +34,11 @@ function App() {
   const deleteAllTasks = () => {
     setTask([])
   }
+
+  const handleDeleteAll = () => {
+    setDeleteAll(true)
+  }
+
   return (
     <>
       <h1>Todo List</h1>
@@ -78,12 +84,14 @@ function App() {
           )
         })}
       </div>
+      {deleteAll && <DeleteAll />}
       <button
         id={task.length === 0 ? "btn-close-disabled" : "btn-close"}
         onClick={() => deleteAllTasks()}
       >
         Delete all
       </button>
+      <button onClick={() => handleDeleteAll()}>Test</button>
     </>
   )
 }
