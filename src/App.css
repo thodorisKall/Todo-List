@@ -26,6 +26,13 @@ body {
   background-color: var(--bg-color);
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
 h1 {
   margin: 5rem 0 2rem;
   text-align: center;
@@ -36,6 +43,7 @@ h1 {
 .input__container {
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .input__container input,
@@ -106,12 +114,14 @@ h1 {
 /* bbg image */
 .bg__image {
   /* border: 1px solid var(--white-tone); */
-  margin: 0 auto;
+  width: 20vw;
+  margin-bottom: 2rem;
 }
 
 .bg__image img {
   height: auto;
-  width: 80%;
+  width: 100%;
+  height: auto;
 }
 
 /*single task */
