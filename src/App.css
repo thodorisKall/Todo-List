@@ -91,7 +91,8 @@ h1 {
   margin-bottom: 4rem;
 }
 
-.tasks__container-disabled {
+.tasks__container-disabled,
+#btn-close-disabled {
   display: none;
 }
 

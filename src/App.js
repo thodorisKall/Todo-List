@@ -78,7 +78,10 @@ function App() {
           )
         })}
       </div>
-      <button id='btn-close' onClick={() => deleteAllTasks()}>
+      <button
+        id={task.length === 0 ? "btn-close-disabled" : "btn-close"}
+        onClick={() => deleteAllTasks()}
+      >
         Delete all
       </button>
     </>
