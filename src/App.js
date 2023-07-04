@@ -39,6 +39,15 @@ function App() {
     setDeleteAll(true)
   }
 
+  const handleYesBtn = () => {
+    deleteAllTasks()
+    setDeleteAll(false)
+  }
+
+  const handleNoBtn = () => {
+    setDeleteAll(false)
+  }
+
   return (
     <>
       <h1>Todo List</h1>
@@ -84,14 +93,13 @@ function App() {
           )
         })}
       </div>
-      {deleteAll && <DeleteAll />}
+      {deleteAll && <DeleteAll noBtn={handleNoBtn} yesBtn={handleYesBtn} />}
       <button
         id={task.length === 0 ? "btn-close-disabled" : "btn-close"}
-        onClick={() => deleteAllTasks()}
+        onClick={(() => deleteAllTasks(), () => handleDeleteAll())}
       >
         Delete all
       </button>
-      <button onClick={() => handleDeleteAll()}>Test</button>
     </>
   )
 }

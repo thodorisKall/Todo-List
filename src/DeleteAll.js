@@ -1,12 +1,19 @@
 import React from "react"
 
-function DeleteAll() {
+function DeleteAll({ noBtn, yesBtn }) {
+  const handleYes = () => {
+    yesBtn()
+  }
+
+  const handleNo = () => {
+    noBtn()
+  }
   return (
     <div className='deleteAll__container'>
       <h2>Do you really want to delete all tasks</h2>
       <div className='deleteAll__buttons'>
-        <button>No</button>
-        <button>Yes</button>
+        <button onClick={() => handleNo()}>No</button>
+        <button onClick={() => handleYes()}>Yes</button>
       </div>
     </div>
   )
