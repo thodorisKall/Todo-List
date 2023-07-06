@@ -12,12 +12,15 @@ function App() {
   const [deleteAll, setDeleteAll] = useState(false)
 
   const handleInput = (event) => {
+    event.preventDefault()
     setInputValue(event.target.value)
   }
 
   const handleAddBtn = () => {
-    setTask((prevTasks) => [...prevTasks, { id: uuidv4(), name: inputValue }])
-    setInputValue("")
+    if (inputValue.trim() !== "") {
+      setTask((prevTasks) => [...prevTasks, { id: uuidv4(), name: inputValue }])
+      setInputValue("")
+    }
   }
 
   const handlePressEnter = (event) => {
