@@ -215,3 +215,46 @@ h1 {
 .deleteAll__buttons button:last-child {
   background-color: var(--danger-red);
 }
+
+.enterTask__container {
+  /* border: 1px solid var(--white-tone); */
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  height: fit-content;
+  width: 20vw;
+  z-index: 998;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem 1rem;
+  color: var(--bg-color);
+  background-color: var(--main-title);
+  border-radius: 10px;
+}
+
+.enterTask__container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.enterTask__container button:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.enterTask__container button:last-child {
+  display: flex;
+  align-items: start;
+}
+
+.enterTask-firstHalf {
+  display: flex;
+}
+
+.enterTask-firstHalf button {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}

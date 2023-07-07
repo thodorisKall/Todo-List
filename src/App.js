@@ -4,12 +4,14 @@ import React, { useState } from "react"
 import { v4 as uuidv4 } from "uuid"
 import IllustrationTodo from "./assets/illustrationTodo.png"
 import DeleteAll from "./DeleteAll.js"
+import EnterTaskMessage from "./EnterTaskMessage"
 
 function App() {
   const [inputValue, setInputValue] = useState("")
   const [enable, setEnable] = useState(false)
   const [task, setTask] = useState([])
   const [deleteAll, setDeleteAll] = useState(false)
+  const [showEnterTask, setShowEnterTask] = useState(false) //show component
 
   const handleInput = (event) => {
     event.preventDefault()
@@ -20,6 +22,8 @@ function App() {
     if (inputValue.trim() !== "") {
       setTask((prevTasks) => [...prevTasks, { id: uuidv4(), name: inputValue }])
       setInputValue("")
+    } else {
+      setShowEnterTask(true)
     }
   }
 
@@ -51,8 +55,15 @@ function App() {
     setDeleteAll(false)
   }
 
+  const closeBtnEnterYourTask = () => {
+    setShowEnterTask(false)
+  }
+
   return (
     <>
+      {showEnterTask && (
+        <EnterTaskMessage closeEnterTask={closeBtnEnterYourTask} />
+      )}
       <h1>Todo List</h1>
       <div className='input__container'>
         <input

@@ -1,12 +1,18 @@
 import React from "react"
 import { CgDanger, CgClose } from "react-icons/cg"
 
-function EnterTaskMessage() {
+function EnterTaskMessage({ closeEnterTask }) {
   return (
     <div className='enterTask__container'>
-      <CgDanger />
-      <h3>Enter your Task</h3>
-      <CgClose />
+      <div className='enterTask-firstHalf'>
+        <button>
+          <CgDanger />
+        </button>
+        <h3>Enter your Task</h3>
+      </div>
+      <button>
+        <CgClose onClick={() => closeEnterTask()} />
+      </button>
     </div>
   )
 }
