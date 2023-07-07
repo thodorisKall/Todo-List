@@ -24,6 +24,10 @@ function App() {
       setInputValue("")
     } else {
       setShowEnterTask(true)
+
+      setTimeout(() => {
+        setShowEnterTask(false)
+      }, 2200)
     }
   }
 
