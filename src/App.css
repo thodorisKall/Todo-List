@@ -161,8 +161,8 @@ h1 {
   cursor: pointer;
 }
 
-#btn-delete {
-  margin-right: 1rem;
+.task__icons button:first-child {
+  margin-right: 5px;
 }
 
 .task-id {

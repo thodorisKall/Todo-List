@@ -1,5 +1,10 @@
 import React, { useState } from "react"
-import { BsFillTrashFill, BsPencil } from "react-icons/bs"
+import {
+  BsFillTrashFill,
+  BsPencil,
+  BsSquare,
+  BsCheckSquare,
+} from "react-icons/bs"
 
 function Task({ name, task_id, deleteSingleTask }) {
   const [showID, setShowID] = useState(false)
@@ -12,11 +17,11 @@ function Task({ name, task_id, deleteSingleTask }) {
       <h2>{name}</h2>
       <h3 className={showID ? "task-id" : "task-id-disable"}>{task_id}</h3>
       <div className='task__icons'>
+        <button id='btn-check'>
+          <BsSquare />
+        </button>
         <button id='btn-delete' onClick={() => handleDelBtn(task_id)}>
           <BsFillTrashFill />
-        </button>
-        <button id='btn-note' onClick={() => setShowID(!showID)}>
-          <BsPencil />
         </button>
       </div>
     </div>
