@@ -140,7 +140,7 @@ h1 {
   border-top: none;
 }
 
-.single__task h2 {
+.single__task-title {
   color: var(--white-tone);
 }
 
@@ -171,6 +171,11 @@ h1 {
 
 .task-id-disable {
   display: none;
+}
+
+.overwrite-effect {
+  color: var(--lighter-grey);
+  text-decoration: line-through;
 }
 
 /* Delete all component */
