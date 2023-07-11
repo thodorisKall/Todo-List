@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "./Task.css"
 import {
   BsFillTrashFill,
   BsPencil,

@@ -1,4 +1,5 @@
 import React from "react"
+import "./EnterTaskMessage.css"
 import { CgDanger, CgClose } from "react-icons/cg"
 
 function EnterTaskMessage({ closeEnterTask }) {
