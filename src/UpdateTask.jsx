@@ -1,4 +1,5 @@
 import React from "react"
+import "./UpdateTask.css"
 
 function UpdateTask({ handleCancelBtn, handleInput, name }) {
   return (
