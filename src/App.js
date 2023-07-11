@@ -2,7 +2,7 @@ import "./App.css"
 import Task from "./Task.js"
 import React, { useState } from "react"
 import { v4 as uuidv4 } from "uuid"
-import IllustrationTodo from "./assets/illustrationTodo.png"
+import TodoBg from "./assets/todo-bg.png"
 import DeleteAll from "./DeleteAll.js"
 import EnterTaskMessage from "./EnterTaskMessage"
 
@@ -92,7 +92,7 @@ function App() {
           task.length === 0 ? "bg__image" : "tasks__container-disabled"
         }
       >
-        <img src={IllustrationTodo} alt={IllustrationTodo} />
+        <img src={TodoBg} alt={TodoBg} />
       </div>
 
       <div
@@ -118,6 +118,7 @@ function App() {
       >
         Delete all
       </button>
+      <h4 id='developed'>Developed by Thodoris Kallioras &copy; 2023</h4>
     </>
   )
 }
