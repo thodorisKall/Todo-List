@@ -1,14 +1,8 @@
 import React, { useState } from "react"
 import "./Task.css"
-import {
-  BsFillTrashFill,
-  BsPencil,
-  BsSquare,
-  BsCheckSquare,
-} from "react-icons/bs"
+import { BsFillTrashFill, BsSquare, BsCheckSquare } from "react-icons/bs"
 
 function Task({ name, task_id, deleteSingleTask }) {
-  const [showID, setShowID] = useState(false)
   const [check, setCheck] = useState(false)
 
   const handleDelBtn = (id) => {
