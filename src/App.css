@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +11,22 @@
   --dark-grey: #36454f;
   --lighter-grey: #536878;
   --main-title: #ff8c00;
-  --danger-red: #dc143c;
+  --danger-red: #ff4500;
+  --pink: #fa8072;
   --cyan-blue: #b9f2ff;
   --white-tone: #fffafa;
+  --light-blue: #7b68ee;
+
+  /* large */
+  --input-text-w-lg: 40%;
+  --btn-w-lg: 20vw;
+  /* mobile */
+  --input-text-w-sm: 40vw;
+  --btn-w-sm: 20vw;
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -78,8 +90,6 @@ h1 {
   margin-right: 5px;
   background-color: var(--bg-color);
   width: 20vw;
-  outline: none;
-  box-shadow: none;
 }
 
 .tasks__container {
@@ -99,11 +109,15 @@ h1 {
 
 #btn-close {
   margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.9rem 2.5rem;
   color: var(--danger-red);
   background-color: var(--dark-grey);
   border: none;
   border-radius: 10px;
-  width: 14vw;
   height: 2rem;
   font-size: large;
 }
@@ -124,4 +138,20 @@ h1 {
   height: auto;
   width: 100%;
   height: auto;
+}
+
+/* Developed */
+#developed {
+  margin-top: 5rem;
+  color: var(--light-blue);
+}
+
+@media only screen and (max-width: 425px) {
+  .input__container {
+    width: var(--input-text-w-sm);
+  }
+
+  .input__container button {
+    width: var(--btn-w-sm);
+  }
 }

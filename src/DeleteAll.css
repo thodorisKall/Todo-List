@@ -8,7 +8,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0.5rem 1rem;
+  padding: 1.1rem 1.4rem;
   display: flex;
   flex-direction: column;
   color: var(--white-tone);
@@ -38,5 +38,5 @@
 }
 
 .deleteAll__buttons button:last-child {
-  background-color: var(--danger-red);
+  background-color: var(--pink);
 }
