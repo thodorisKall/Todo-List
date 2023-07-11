@@ -3,6 +3,7 @@ import "./Task.css"
 import { BsFillTrashFill, BsSquare, BsCheckSquare } from "react-icons/bs"
 
 function Task({ name, task_id, deleteSingleTask }) {
+  const [showID, setShowID] = useState(false)
   const [check, setCheck] = useState(false)
 
   const handleDelBtn = (id) => {
