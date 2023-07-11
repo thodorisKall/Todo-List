@@ -1,4 +1,5 @@
 import React from "react"
+import "./DeleteAll.css"
 
 function DeleteAll({ noBtn, yesBtn }) {
   return (
