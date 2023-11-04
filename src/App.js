@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid"
 import TodoBg from "./assets/todo-bg.png"
 import DeleteAll from "./DeleteAll.js"
 import EnterTaskMessage from "./EnterTaskMessage"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [inputValue, setInputValue] = useState("")
@@ -65,6 +66,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       {showEnterTask && (
         <EnterTaskMessage closeEnterTask={closeBtnEnterYourTask} />
       )}
